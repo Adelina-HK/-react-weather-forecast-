@@ -1,13 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.css";
+import IconDate from "./icons-date.png";
+import FormattedDate from "./FormattedDate.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="WeatherApp">
+      <br />
+      <div className="row m-2">
+        <div className="col-2">
+          <img src={IconDate} alt="DateInfo pic" width={50} />
+          <FormattedDate date={new Date()} />
+        </div>
+        <div className="col-8">
+          <h1 className="m-2">React Weather App</h1>
+        </div>
+      </div>
+
+      <App />
+      <footer className="m-4">
+        <a
+          href="https://github.com/Adelina-HK/react-git-netlify-weather-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See my code on my GitHub
+        </a>
+      </footer>
+    </div>
   </React.StrictMode>
 );
 
