@@ -7,22 +7,21 @@ import "bootstrap/dist/css/bootstrap.css";
 import IconDate from "./icons-date.png";
 import FormattedDate from "./FormattedDate.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="WeatherApp">
       <br />
       <div className="row m-2">
-        <div className="col-2">
+        <div className="col-2 calendar">
           <img src={IconDate} alt="DateInfo pic" width={50} />
           <FormattedDate date={new Date()} />
+          </div>
+          <div className="col-10">
+            <h1>React Weather App</h1>
+          </div>
         </div>
-        <div className="col-8">
-          <h1 className="m-2">React Weather App</h1>
-        </div>
-      </div>
-
-      <App />
+       <App />
       <footer className="m-4">
         <a
           href="https://github.com/Adelina-HK/react-git-netlify-weather-app"

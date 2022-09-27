@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 
@@ -38,7 +38,7 @@ export default function App() {
   }
 
   let searchForm = (
-    <div className="Weather m-3">
+    <div className="Weather mb-2">
       <form onSubmit={handleSubmit}>
         <input
           type="search"
@@ -54,17 +54,13 @@ export default function App() {
   if (query) {
     return (
       <div>
-       {searchForm}
+        {searchForm}
         <h3>The weather in {weather.city} is:</h3>
         <WeatherInfo info={weather} />
       </div>
     );
   } else {
     search();
-    return (
-      <div>
-       {searchForm}
-      </div>
-    );
+    return <div>{searchForm}</div>;
   }
 }

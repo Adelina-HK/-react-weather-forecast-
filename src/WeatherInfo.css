@@ -2,7 +2,7 @@
   text-align: center;
 }
 .WeatherInfo ul {
-  color: #e68d59;
+  color: #2d20eb;
 }
 li {
   list-style: none;
@@ -11,11 +11,11 @@ li {
 }
 .WeatherApp .Temp {
   font-size: 45px;
-  color: #e68d59;
+  color: #2d20eb;
   text-align: left;
 }
 .WeatherApp .unit {
-  color: #e68d59;
+  color: #2d20eb;
   text-shadow: none;
   font-size: 12px;
   position: relative;
@@ -26,5 +26,5 @@ li {
   text-align: center;
 }
 .WeatherInfo ul {
-  color: #e68d59;
+  color: #2d20eb;
 }
