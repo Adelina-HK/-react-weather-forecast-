@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
+
 
 export default function App() {
   let [query, setQuery] = useState("");
   let [weather, setWeather] = useState({});
-  let [city, setCity] = useState("");
+  let [city, setCity] = useState("Kyiv");
 
   function showWeather(response) {
     console.log(response.data);

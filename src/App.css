@@ -2,31 +2,29 @@ body {
   font-family: "Mukta Malar", sans-serif;
 }
 
-
-.WeatherApp {
+.WeatherAppBody {
   text-align: center;
   margin: 10px auto;
-  color: rgb(254, 254, 254);
+  color: rgb(255, 255, 255);
   border-radius: 40px;
-  background: linear-gradient(
-    350.6deg,
-    rgba(232, 237, 240, 0.814) 11.2%,
-    rgba(18, 113, 255, 0.87) 100.2%
-  );
+  background-image: url("Fall\ .jpg");
+  max-width: 900px;
 }
-
+.WeatherApp {
+  margin: 5px auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+}
 searchForm {
   display: block;
-  margin: 20px auto;
-  box-shadow: 1px 2px 4px rgb(42, 88, 158, 0.844);
+  margin: 10px auto;
+  box-shadow: 1px 2px 4px rgba(164, 90, 26, 0.92);
 }
 
 input {
-  padding: 12px;
-  margin: 5px;
+  padding: 10px;
   border-radius: 18px;
   font-size: 18px;
-  border: 1px solid rgba(67, 117, 192, 0.844);
-  box-shadow: 2px 2px 5px rgba(67, 117, 192, 0.844);
+  border: 1px solid rgb(101, 62, 15);
+  box-shadow: 1px 2px 4px rgba(164, 90, 26, 0.92);
 }
-

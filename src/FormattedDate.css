@@ -1,12 +1,3 @@
-p1 {
-  font-size: 20px;
-}
-p2 {
-  font-size: 18px;
-}
-img {
-  display: inline;
-}
-.DateInfo {
-  display: inline;
+.calendar {
+  font-size: 15px;
 }
