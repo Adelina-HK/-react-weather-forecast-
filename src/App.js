@@ -4,7 +4,6 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
-
 export default function App() {
   let [query, setQuery] = useState("");
   let [weather, setWeather] = useState({});
@@ -14,6 +13,7 @@ export default function App() {
     console.log(response.data);
     setQuery(true);
     setWeather({
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -63,6 +63,11 @@ export default function App() {
     );
   } else {
     search();
-    return <div>{searchForm}</div>;
+    return (
+      <div>
+        {searchForm}
+        <Forecast coordinates={weather.coordinates} />
+      </div>
+    );
   }
 }
