@@ -6,8 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import IconDate from "./icons-date.png";
 import FormattedDate from "./FormattedDate.js";
-import Forecast from "./Forecast";
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,9 +27,6 @@ root.render(
           </div>
           <div className="col-6">
             <App />
-          </div>
-          <div className="col-4">
-          <Forecast />
           </div>
         </div>
       </div>

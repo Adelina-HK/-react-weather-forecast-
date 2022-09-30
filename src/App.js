@@ -5,13 +5,12 @@ import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
 export default function App() {
-  let [query, setQuery] = useState({});
-  let [weather, setWeather] = useState({});
+  let [weatherData, setWeatherData] = useState({ready: false});
   let [city, setCity] = useState("Kyiv");
 
-  function showWeather(response) {
-    setQuery(true);
-    setWeather({
+  function handleResponse(response) {
+      setWeatherData({ 
+      ready: true,
       coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
@@ -28,14 +27,15 @@ export default function App() {
     search();
   }
 
-  function search() {
+    function cityChange(event) {
+    setCity(event.target.value);
+  }
+
+function search() {
     let apiKey = "1dad91bc92f6c69698e1aad50d0a7304";
     let units = `metric`;
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(url).then(showWeather);
-  }
-  function updateCity(event) {
-    setCity(event.target.value);
+    axios.get(url).then(handleResponse);
   }
 
   let searchForm = (
@@ -45,28 +45,28 @@ export default function App() {
           type="search"
           placeholder="Type a city"
           className="me-3"
-          onChange={updateCity}
+          onChange={cityChange}
+          autoFocus="on"
         />
         <input type="submit" value="Search" />
       </form>
     </div>
   );
 
-  if (query) {
+  if (weatherData.ready) {
     return (
       <div>
         {searchForm}
-        <h3>The weather in {weather.city} is:</h3>
-        <WeatherInfo info={weather} />
-      </div>
+        <h3>
+          The weather in <strong>{weatherData.city}</strong> is:
+        </h3>
+        <WeatherInfo data={weatherData} />
+
+        <Forecast coordinates={weatherData.coordinates} />
+        </div>
     );
   } else {
     search();
-    return (
-      <div>
-        {searchForm}
-        <Forecast coordinates={weather.coordinates} />
-      </div>
-    );
+    return "Loading..";
   }
 }
