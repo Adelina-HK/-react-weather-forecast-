@@ -8,7 +8,7 @@ body {
   color: rgb(255, 255, 255);
   border-radius: 40px;
   background-image: url("Fall\ .jpg");
-  max-width: 900px;
+  max-width: 700px;
 }
 .WeatherApp {
   margin: 5px auto;
@@ -28,3 +28,5 @@ input {
   border: 1px solid rgb(101, 62, 15);
   box-shadow: 1px 2px 4px rgba(164, 90, 26, 0.92);
 }
+h3 {text-align: left; padding: 8px;
+background: rgba(238, 206, 176, 0.286); border-radius: 8px;}

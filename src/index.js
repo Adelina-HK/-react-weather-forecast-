@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import IconDate from "./icons-date.png";
 import FormattedDate from "./FormattedDate.js";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -25,10 +26,11 @@ root.render(
             />
             <FormattedDate date={new Date()} />
           </div>
-          <div className="col-6">
+          <div className="col-10">
             <App />
           </div>
-        </div>
+          
+          </div>
       </div>
       <footer className="m-4">
         <a

@@ -5,11 +5,11 @@ import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
 export default function App() {
-  let [weatherData, setWeatherData] = useState({ready: false});
+  let [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState("Kyiv");
 
   function handleResponse(response) {
-      setWeatherData({ 
+    setWeatherData({
       ready: true,
       coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
@@ -27,11 +27,11 @@ export default function App() {
     search();
   }
 
-    function cityChange(event) {
+  function cityChange(event) {
     setCity(event.target.value);
   }
 
-function search() {
+  function search() {
     let apiKey = "1dad91bc92f6c69698e1aad50d0a7304";
     let units = `metric`;
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -56,14 +56,15 @@ function search() {
   if (weatherData.ready) {
     return (
       <div>
-        {searchForm}
-        <h3>
-          The weather in <strong>{weatherData.city}</strong> is:
-        </h3>
-        <WeatherInfo data={weatherData} />
-
-        <Forecast coordinates={weatherData.coordinates} />
+        <div>
+          {searchForm}
+          <h3>
+          <strong>{weatherData.city}</strong>
+          </h3>
+          <WeatherInfo data={weatherData} />
         </div>
+        <Forecast coordinates={weatherData.coordinates} />
+      </div>
     );
   } else {
     search();
