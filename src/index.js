@@ -39,7 +39,7 @@ root.render(
           rel="noopener noreferrer"
         >
           See my code on my GitHub
-        </a>
+        </a> and also on Netlify
       </footer>
     </div>
   </React.StrictMode>

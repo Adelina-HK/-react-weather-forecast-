@@ -23,10 +23,10 @@ export default function FormattedDate(props) {
 
   return (
     <div className="DateInfo">
-      <p1 className="d-block">{day}</p1>
-      <p2>
+      <p className="d-block">{day}</p>
+      <p>
         {hours}:{minutes}
-      </p2>
+      </p>
     </div>
   );
 }
