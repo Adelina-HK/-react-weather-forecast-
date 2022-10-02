@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import IconDate from "./icons-date.png";
 import FormattedDate from "./FormattedDate.js";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -29,17 +28,26 @@ root.render(
           <div className="col-10">
             <App />
           </div>
-          
-          </div>
+        </div>
       </div>
       <footer className="m-4">
+        See my code on my{" "}
         <a
           href="https://github.com/Adelina-HK/react-git-netlify-weather-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          See my code on my GitHub
-        </a> and also on Netlify
+          GitHub
+        </a>{" "}
+        and also on{" "}
+        <a
+          href="https://funny-platypus-b5bf89.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          Netlify
+        </a>{" "}
       </footer>
     </div>
   </React.StrictMode>
